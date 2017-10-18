@@ -18,29 +18,28 @@ article.tweet header {
  }
  
 
-.avartars {
+article.tweet img {
     height: 50px;
     width: 50px;
     float: left;
     border-radius: 3%
 }
     
-.name {
+article.tweet .name {
     font: 1.5em bold;
-    padding:5px;
+    padding:5px
 }
 
-.handle {
+article.tweet .handle {
      float: right;
      padding-top:10px;
      font-size: 0.7em
 }
 
-.content {
+p {
     margin-left: 5px;
     height: 40px;
     padding:5px 
-     
 }
 
 article.tweet footer {

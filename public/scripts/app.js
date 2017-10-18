@@ -64,7 +64,7 @@ $(function() {
         const {avatars, name, handle} = tweet.user;
         const $tweet = $('<article>').addClass("tweet");
         const $header = $('<header>');
-        $header.append(($("<img>").addClass("avatars")).attr('src',avatars.small));
+        $header.append(($("<img>").addClass("avatars")).attr('src', avatars.small));
         $header.append(($("<span>").addClass("name")).text(name));
         $header.append(($("<span>").addClass("handle")).text(handle));
         const $footer = $("<footer>");
