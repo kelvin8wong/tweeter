@@ -25,6 +25,6 @@ h2 {
     left: 0;
 }
 
-.new-tweet span {
+.counter {
     float: right;
     margin-top: .25em; }
