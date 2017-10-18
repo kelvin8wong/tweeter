@@ -3,11 +3,11 @@ article.tweet header {
     margin: 0 auto 1em auto;
     padding: 5px;
     position: relative;
-    height: 80px;
+    height: 60px;
     width: 100%; 
     border-color: #666666;
     background-color: #eeeeee;
-    opacity: .6;
+    opacity: .8;
  }
 
  article.tweet {
@@ -19,33 +19,52 @@ article.tweet header {
  
 
 .profile-picture {
-    height: 60px;
+    height: 50px;
+    width: 50px;
     float: left;
     border-radius: 3%
 }
     
 .name {
-    font-size: 1.5em;
+    font: 1.5em bold;
     padding:5px;
 }
 
 .userName {
-        float: right;
-        padding:5px
+     float: right;
+     padding-top:10px;
+     font-size: 0.7em
 }
 
 .content {
-    margin-left: 20px; 
-    padding: .4em;  
+    margin-left: 5px;
+    height: 40px;
+    padding:5px 
+     
 }
 
 article.tweet footer {
-    height: 40px;
+    height: 30px;
     border-top: 1px solid #eeeeee;
-    padding: 10px
+    padding: 7px;
+    font-size: 10px
 }
 
-article.tweet .icons {
+article.tweet .icons{
+    visibility: hidden
+}
+
+article.tweet:hover .icons {
     float: right;
     margin-right: .5em; 
+    color: #00a087;
+    visibility: visible
 }
+
+ article.tweet:hover {
+   border-color: #000;
+ }
+ article.tweet:hover header {
+   opacity:1;
+ }
+ 
