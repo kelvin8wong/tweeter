@@ -4,6 +4,8 @@ $(function(){
         $(this).parent().find('.counter').text(140-length);
         if (length > 140) {
             $(this).parent().find('.counter').css('color', 'red');
-        };
+        } else {
+            $(this).parent().find('.counter').css('color','black');
+        }
     }); 
 });
