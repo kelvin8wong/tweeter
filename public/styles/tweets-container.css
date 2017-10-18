@@ -18,7 +18,7 @@ article.tweet header {
  }
  
 
-.profile-picture {
+.avartars {
     height: 50px;
     width: 50px;
     float: left;
@@ -30,7 +30,7 @@ article.tweet header {
     padding:5px;
 }
 
-.userName {
+.handle {
      float: right;
      padding-top:10px;
      font-size: 0.7em
