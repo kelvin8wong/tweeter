@@ -11,7 +11,10 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets-container.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -29,7 +32,6 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -38,6 +40,25 @@
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
+      </section>
+      <section id="tweets-container">
+        <article class="tweet">
+          <header>
+            <img class="profile-picture" src="/images/davidbeckham.png">
+            <span class="name">David Beckham</span>
+            <span class="userName">@davidbeckham</span>
+          </header>
+          <p class="content">GO ENGLAND!</p>
+          <footer>
+            <span class="days">10 days ago</span>
+            <div class="icons">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+            </span>
+          </footer>
+        </article>
       </section>
     </main>
 
