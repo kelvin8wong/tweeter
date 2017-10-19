@@ -39,10 +39,21 @@ $(function() {
         return $tweet;
     }
     
-    renderTweets();
+	renderTweets();
+	
+	const maxLength = 140; 
+	
 
 	$('#tweet-form').on('submit', function (event) {
+	const length = $(".new-tweet textarea").val().length;
 		event.preventDefault();
+		if (length > maxLength) {
+			alert("Too many characters!")
+			return;
+		} else if (length == 0){
+			alert("You can't leave it blank!")
+			return;
+		}
     	let form = this;
 		let data = $(this).serialize();
     	$.ajax({
@@ -54,6 +65,10 @@ $(function() {
 			$(".new-tweet .counter").text(140);
 			renderTweets();
 		});
-    });
+	});
+	
+
+
+
 })
 
