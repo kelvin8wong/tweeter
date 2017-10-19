@@ -2,7 +2,7 @@ nav {
     height: 80px;
     color: #e8fdff;
     background-color: #00a087;
-    padding: 0px 2em;
+    padding: 0px 110px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -20,4 +20,34 @@ nav {
     left: 10px;
     font-size: 2em;
     line-height:80px
+}
+
+#nav-bar button {
+    background-color: #e8fdff; 
+    float: right;
+    border: 1px solid black;
+    border-radius:5%;
+    margin-top: 20px;
+    height:50px;
+    color:#009999
+}
+
+#nav-bar button:hover {
+    background-color: white; 
+    float: right;
+    border: 1px solid black;
+    border-radius:5%;
+    margin-top: 20px;
+    height:50px;
+    color:black
+}
+
+#nav-bar button:focus {
+    outline: none;
+  }
+
+#nav-bar img {
+    height: 1.2em;
+    padding-right: 5px;
+    color: #009999
 }
