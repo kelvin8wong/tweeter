@@ -66,9 +66,5 @@ $(function() {
 			renderTweets();
 		});
 	});
-	
-
-
-
 })
 
