@@ -20,14 +20,19 @@ $(function() {
 
     function createTweetElement(tweet) {
         const {user, content, created_at} = tweet;
-        const {avatars, name, handle} = tweet.user;
+		const {avatars, name, handle} = tweet.user;
+		let timestamp = moment(created_at).fromNow();
+		if(timestamp === "in a few seconds"){
+			timestamp = "a few seconds ago";
+		};
         const $tweet = $('<article>').addClass("tweet");
         const $header = $('<header>');
         $header.append(($("<img>").addClass("avatars")).attr('src', avatars.small));
         $header.append(($("<span>").addClass("name")).text(name));
         $header.append(($("<span>").addClass("handle")).text(handle));
         const $footer = $("<footer>");
-        $footer.append(($("<span>").addClass("created_at")).text(created_at));
+		$footer.append(($("<span>").addClass("created_at")).text(timestamp));
+		$footer.append($("<span>").addClass("likesCounter"));
         const $icons = ($("<span>").addClass("icons"));
         $icons.append($("<span>").addClass("fa fa-flag"));
         $icons.append($("<span>").addClass("fa fa-retweet"));

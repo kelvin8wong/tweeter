@@ -16,7 +16,6 @@ article.tweet header {
     margin: 0 auto 1em auto;
     width: 90%; 
  }
- 
 
 article.tweet img {
     height: 50px;
@@ -51,12 +50,12 @@ article.tweet footer {
 }
 
 article.tweet .icons{
+    float: right;
     visibility: hidden
 }
 
 article.tweet:hover .icons {
     float: right;
-    margin-right: .5em; 
     color: #00a087;
     visibility: visible
 }
@@ -67,4 +66,10 @@ article.tweet:hover .icons {
  article.tweet:hover header {
    opacity:1;
  }
+ .fa {
+    padding: 3px
+ }
  
+ .likesCounter {
+    margin-left: 40px;
+  }
