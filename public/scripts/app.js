@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-//fake data
 $(function() {
     function renderTweets() {
 		$.ajax({
@@ -17,7 +11,7 @@ $(function() {
 			})
         })   
 	}
-
+	//creating the DOM for tweet
     function createTweetElement(tweet) {
         const {user, content, created_at} = tweet;
 		const {avatars, name, handle} = tweet.user;
@@ -65,7 +59,7 @@ $(function() {
 			url: `/tweets/${tweetId}/likes`
 		})
 	})
-
+	//event handler for sending tweets
 	$('#tweet-form').on('submit', function (event) {
 	const length = $(".new-tweet textarea").val().length;
 		event.preventDefault();
