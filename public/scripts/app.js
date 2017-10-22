@@ -25,33 +25,51 @@ $(function() {
 		if(timestamp === "in a few seconds"){
 			timestamp = "a few seconds ago";
 		};
-        const $tweet = $('<article>').addClass("tweet");
+        const $tweet = $('<article>').data('id',tweet._id).addClass("tweet");
         const $header = $('<header>');
         $header.append(($("<img>").addClass("avatars")).attr('src', avatars.small));
         $header.append(($("<span>").addClass("name")).text(name));
         $header.append(($("<span>").addClass("handle")).text(handle));
         const $footer = $("<footer>");
 		$footer.append(($("<span>").addClass("created_at")).text(timestamp));
-		$footer.append($("<span>").addClass("likesCounter"));
         const $icons = ($("<span>").addClass("icons"));
         $icons.append($("<span>").addClass("fa fa-flag"));
         $icons.append($("<span>").addClass("fa fa-retweet"));
-        $icons.append($("<span>").addClass("fa fa-heart"));
+		$icons.append($("<span>").addClass("fa fa-heart").data('likes', 0));
+		$icons.append($("<span>").addClass("likesCounter").data('likes', tweet.likes).text(tweet.likes));
         $footer.append($icons);
         $tweet.append($header);
         $tweet.append($("<p>").text(content.text));
         $tweet.append($footer);
         return $tweet;
     }
-    
-	renderTweets();
 	
-	const maxLength = 140; 
-	
+	//Event handler for counting the number of likes
+
+	$('#tweets-container').on('click', '.fa-heart', function(event) {
+		let $likesCounter = $(this).siblings('.likesCounter');
+		let $article = $(this).parents('.tweet')
+		let tweetId = $article.data('id');
+		let numOfLikes= $likesCounter.data('likes');
+		if ($(this).hasClass('clicked')) {
+			$(this).removeClass('clicked');
+			numOfLikes--;
+		} else {
+			$(this).addClass("clicked")
+			numOfLikes++;
+		}
+		$likesCounter.text(numOfLikes);
+		$likesCounter.data('likes', numOfLikes);
+		$.ajax({
+			method: 'POST',
+			url: `/tweets/${tweetId}/likes`
+		})
+	})
 
 	$('#tweet-form').on('submit', function (event) {
 	const length = $(".new-tweet textarea").val().length;
 		event.preventDefault();
+		const maxLength = 140; 
 		if (length > maxLength) {
 			alert("Too many characters!")
 			return;
@@ -71,5 +89,7 @@ $(function() {
 			renderTweets();
 		});
 	});
+
+	renderTweets();
 })
 
